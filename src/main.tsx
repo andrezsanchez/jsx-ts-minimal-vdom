@@ -62,7 +62,6 @@ function render(element: JSX.Element, container: HTMLElement) {
   container.appendChild(instantiateDOM(element));
 }
 
-const body = document.getElementsByTagName('body')[0];
 function Wow(props: { message: string }): JSX.Element {
   return <div>{ props.message }</div>;
 }
@@ -77,7 +76,7 @@ class Yay  {
 
 const c = <Wow message="afsd"/>;
 
-const stuff = (
+const jsxTree = (
   <div>
     <div><Yay /></div>
     <div />
@@ -107,4 +106,5 @@ const stuff = (
   </div>
 );
 
-render(stuff, body);
+const body = document.getElementsByTagName('body')[0];
+render(jsxTree, body);
